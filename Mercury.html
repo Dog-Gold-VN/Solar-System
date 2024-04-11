@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Sun</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #121212;
+            color: white;
+            display: inline;
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name p {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .menu nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-weight: bold;
+            flex-wrap: wrap;
+        }
+
+        .menu nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.2s linear;
+            border: 1px solid #121212;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .menu nav a:nth-child(3){
+            border-bottom: 1px solid red;
+            background-color: #3b3b3b;
+        }
+
+        .menu nav a:hover {
+            border-bottom: 1px solid rgb(0, 217, 255);
+            background-color: #3e8e41;
+            transform: translateY(-5px);
+        }
+
+
+
+        :root {
+            --Mercury-image: url("https://science.nasa.gov/wp-content/uploads/2023/09/PIA17386.jpg?w=2048&format=webp");
+            --Mercury-tilt: rotate(0.034deg);
+            --Mercury-day: 50;
+            --Mercury-color: #fcf5e1;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 80%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .content {
+            width: 400px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .card {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            --image: var(--Mercury-image);
+            --coler: var(--Mercury-color);
+            --tilt: var(--Mercury-tilt);
+            --day: var(--Mercury-day);
+        }
+
+        @keyframes planetRotate {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        .surface {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            background-image: var(--image);
+            background-size: cover;
+            transform: var(--tilt) scale(1.2);
+            animation: planetRotate calc(var(--day) * 0.1s) linear infinite;
+        }
+
+        .atmosphere {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            background: radial-gradient(circle at 30% 50%,
+                    #ffffff4d 0%,
+                    #ffffff00 65%);
+            box-shadow: inset 10px 0px 12px -2px #cccccc85,
+                inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--coler);
+        }
+
+        .planet::before {
+            content: "";
+            position: absolute;
+            height: 290px;
+            z-index: -2;
+            left: 50%;
+            top: 0%;
+            border-left: 1px dashed var(--coler);
+            transform: var(--tilt) scale(1.2);
+        }
+
+        .icon {
+            transform: var(--tilt);
+            color: var(--color);
+        }
+
+        .info {
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .item {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 5px;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        .label {
+            font-size: 20px;
+        }
+
+        .line {
+            flex: 1;
+            border-bottom: 1px dashed #ffffffc2;
+        }
+
+        .info h2 {
+            font-size: 40px;
+        }
+
+        .information {
+            background-color: #666666;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            border-radius: 20px;
+            overflow: auto;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+
+        .information ol li {
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-bottom: 1px solid white;
+            padding: 15px;
+        }
+
+        .information ol li:last-child {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button {
+            background-color: #28cc4e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.7s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        button:hover {
+            transform: scale(1.15);
+            background-color: #1be2c8;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                flex-wrap: wrap;
+            }
+
+            .information {
+                margin: 0;
+            }
+        }
+
+        footer {
+            display: grid;
+            align-items: center;
+        }
+
+        .text-footer {
+            display: flex;
+            border-top: 1px solid white;
+            padding: 10px;
+            margin: 10px;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="name">
+            <a href="index.html">
+                <p>Solar system</p>
+            </a>
+        </div>
+        <div class="menu">
+            <nav>
+                <a href="index.html">Home</a>
+                <a class="a-Sun" href="Sun.html">Sun</a>
+                <a class="a-Mercury" href="Mercury.html">Mercury</a>
+                <a class="a-Venus" href="Venus.html">Venus</a>
+                <a class="a-Earth" href="Earth.html">Earth</a>
+                <a class="a-Moon" href="Moon.html">Moon</a>
+                <a class="a-Mars" href="Mars.html">Mars</a>
+                <a class="a-Jupiter" href="Jupiter.html">Jupiter</a>
+                <a class="a-Saturn" href="Saturn.html">Saturn</a>
+                <a class="a-Uranus" href="Uranus.html">Uranus</a>
+                <a class="a-Neptune" href="Neptune.html">Neptune</a>
+                <a class="a-Pluto" href="Pluto.html">Pluto</a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <article class="card">
+                    <div class="planet">
+                        <div class="atmosphere">
+                            <div class="surface"></div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2 class="title">Mercury</h2>
+                        <div class="form">
+                            <div class="item">
+                                <label class="label">Góc nghiêng </label>
+                                <span class="line"></span>
+                                <i class="icon fa-solid fa-right-long"></i>
+                                <span class="detail">0.034°</span>
+                            </div>
+                            <div class="item">
+                                <label class="label">Ngày</label>
+                                <span class="line"></span>
+                                <span class="detail">58.6 ngày Trái Đất</span>
+                            </div>
+                            <div class="item">
+                                <label class="label">Năm</label>
+                                <span class="line"></span>
+                                <span class="detail">88 ngày Trái Đất</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="information">
+            <ol>
+                <li>
+                    Nhiệt Độ Cực Đoan: Mercury có một sự chênh lệch nhiệt độ rất lớn giữa ngày và đêm do không có bầu
+                    khí quyển đáng kể để giữ nhiệt. Nhiệt độ có thể lên tới khoảng 430 độ C (800 độ F) vào ban ngày và
+                    giảm xuống tới -180 độ C (-290 độ F) vào ban đêm
+                </li>
+                <li>
+                    Năm Ngắn, Ngày Dài: Mercury quay quanh Mặt Trời chỉ trong khoảng 88 ngày Trái Đất, nhưng một ngày
+                    trên Mercury (từ mặt trời mọc đến mặt trời mọc tiếp theo) kéo dài khoảng 59 ngày Trái Đất. Điều này
+                    là do Mercury quay quanh trục của nó rất chậm so với quỹ đạo của nó xung quanh Mặt Trời.
+                </li>
+                <li>
+                    Hành Tinh Nhỏ Nhất: Trước khi Pluto bị loại khỏi danh sách các hành tinh, Mercury là hành tinh nhỏ
+                    nhất trong hệ Mặt Trời. Kể từ khi Pluto được phân loại lại là một hành tinh lùn, Mercury giờ đây là
+                    hành tinh nhỏ nhất.
+                </li>
+                <li>
+                    Sự Co Rút Địa Chất: Mercury đang từ từ co lại theo thời gian. Khi hạt nhân của nó nguội đi và đông
+                    cứng, bề mặt của hành tinh đã bị co rút, tạo ra các gấp nếp và vết nứt. Các nhà khoa học ước tính
+                    rằng đường kính của Mercury có thể đã giảm khoảng 7 km (4,3 dặm) trong suốt một vài tỷ năm qua.
+                </li>
+                <li>
+                    Bề Mặt Đầy Crater: Bề mặt của Mercury có nhiều crater do va chạm với thiên thạch và tiểu hành tinh,
+                    tương tự như Mặt Trăng của Trái Đất. Crater lớn nhất, Caloris Basin, có đường kính khoảng 1,550 km
+                    (960 dặm).
+                </li>
+                <li> <a href="informationMercury.html"> <button> Read More </button></a></li>
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <div class="text-footer">
+            <ul>
+                <p>Địa chỉ: Số 1 Phố Xốm - Phú Lãm - Hà Đông - Hà Nội</p>
+                <p> SĐT: 039.444.0833 </p>
+                <p> Email: Quanghaia2005@gmail.com</p>
+            </ul>
+            <ul>
+                <p>Liên hệ với chúng tôi: </p>
+                <p><i class="fa-solid fa-phone"></i></p>
+                <p><i class="fa-solid fa-envelope"></i></p>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

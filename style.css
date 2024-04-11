@@ -1,0 +1,1145 @@
+body {
+  margin: 0;
+  background-color: #121212;
+  color: white;
+  display: inline;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name p {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.menu nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  font-weight: bold;
+  flex-wrap: wrap;
+}
+
+.menu nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+  transition: 0.2s linear;
+  border: 1px solid #121212;
+  border-radius: 5px 5px 0px 0px;
+  padding: 3px;
+}
+
+.menu nav a:first-child{
+  border-bottom: 1px solid red;
+  background-color: #3b3b3b;
+}
+
+.menu nav a:hover {
+  border-bottom: 1px solid rgb(0, 217, 255);
+  background-color: #353535;
+  transform: translateY(-5px);
+}
+
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  height:1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #292929; */
+  position: relative;
+}
+.content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: spin linear infinite;
+  transition: 1s linear;
+  /* background-color: #ffffff; */
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 70px rgb(255, 255, 255);
+  z-index: 10;
+  transition: 1s linear;
+}
+
+.sun:hover {
+  background-color: rgb(0, 255, 85);
+  box-shadow: 0 0 70px rgb(0, 255, 85);
+}
+
+.circle {
+  transition: 1s linear;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.cmercury {
+  width: 150px;
+  height: 150px;
+  border: 1px solid red;
+  animation: spin 8.1s linear infinite;
+  z-index: 9;
+}
+
+.mercury {
+  transition: 1s linear;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-left: -5px;
+  box-shadow: 5px 0px 10px rgb(255, 100, 100);
+  background: radial-gradient(circle at 100% 50%, rgb(255, 0, 0) 0%, black 80%);
+}
+
+.mercury:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cvenus {
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgb(255, 0, 170);
+  animation: spin 12.15s linear infinite;
+  z-index: 8;
+}
+
+.venus {
+  transition: 1s linear;
+  position: absolute;
+  width: 23.4px;
+  height: 23.4px;
+  border-radius: 50%;
+  margin-left: -11.7px;
+  box-shadow: 5px 0px 10px rgb(255, 99, 203);
+  background: radial-gradient(circle at 100% 50%, rgb(255, 0, 170) 0%, black 80%);
+}
+
+.venus:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cearth {
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgb(0, 60, 255);
+  animation: spin 20s linear infinite;
+  z-index: 7;
+}
+
+.earth {
+  transition: 1s linear;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-left: -12.5px;
+  box-shadow: 5px 0px 10px rgb(53, 100, 255);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 60, 255) 0%, black 80%);
+}
+
+.earth:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cmoon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  animation: spin 5s linear infinite;
+  z-index: -1;
+  margin-left: -25px;
+  transition: 1s linear;
+}
+
+.moon {
+  transition: 1s linear;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-left: -4px;
+  box-shadow: 4px 0px 8px rgb(255, 255, 255);
+  background: radial-gradient(circle at 100% 50%, rgb(255, 255, 255) 0%, black 80%);
+}
+
+.moon:hover {
+  box-shadow: 4px 0px 8px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cmars {
+  width: 450px;
+  height: 450px;
+  border: 1px solid rgb(162, 0, 255);
+  animation: spin 35.82s linear infinite;
+  z-index: 6;
+}
+
+.mars {
+  transition: 1s linear;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: -10px;
+  box-shadow: 5px 0px 10px rgb(198, 100, 255);
+  background: radial-gradient(circle at 100% 50%,
+      rgb(162, 0, 255) 0%,
+      black 80%);
+}
+
+.mars:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cjupiter {
+  width: 600px;
+  height: 600px;
+  border: 1px solid rgb(0, 204, 255);
+  animation: spin 62.57s linear infinite;
+  z-index: 5;
+}
+
+.jupiter {
+  transition: 1s linear;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  margin-left: -35px;
+  border-radius: 50%;
+  box-shadow: 7.5px 0px 15px rgb(100, 224, 255);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 204, 255) 0%, black 80%);
+}
+
+.jupiter:hover {
+  box-shadow: 10px 0px 20px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.csaturn {
+  width: 800px;
+  height: 800px;
+  border: 1px solid rgb(115, 255, 0);
+  animation: spin 84.6s linear infinite;
+  z-index: 4;
+}
+
+.saturn {
+  transition: 1s linear;
+  position: absolute;
+  width: 58.75px;
+  height: 58.75px;
+  border-radius: 50%;
+  margin-left: -29.375px;
+  box-shadow: 5px 0px 10px rgb(170, 255, 100);
+  background: radial-gradient(circle at 100% 50%, rgb(115, 255, 0) 0%, black 80%);
+}
+
+.saturn:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.belt-saturn {
+  transition: 1s linear;
+  width: 70px;
+  height: 70px;
+  border: 10px solid rgba(170, 255, 100, 0.342);
+  margin-left: -16px;
+  margin-top: -16px;
+  border-radius: 50%;
+  position: absolute;
+  transition: 1s linear;
+}
+
+.curanus {
+  width: 950px;
+  height: 950px;
+  border: 1px solid rgb(200, 255, 0);
+  animation: spin 119s linear infinite;
+  z-index: 3;
+}
+
+.uranus {
+  transition: 1s linear;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: -15px;
+  box-shadow: 5px 0px 10px rgb(222, 255, 100);
+  background: radial-gradient(circle at 100% 50%, rgb(200, 255, 0) 0%, black 80%);
+}
+
+.uranus:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cneptune {
+  width: 1100px;
+  height: 1100px;
+  border: 1px solid rgb(255, 187, 0);
+  animation: spin 137s linear infinite;
+  z-index: 2;
+}
+
+.neptune {
+  transition: 1s linear;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-left: -10px;
+  box-shadow: 5px 0px 10px rgb(255, 214, 100);
+  background: radial-gradient(circle at 100% 50%, rgb(255, 178, 0) 0%, black 80%);
+}
+
+.neptune:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.cpluto {
+  width: 1200px;
+  height: 1200px;
+  border: 1px solid rgb(255, 255, 255);
+  animation: spin 160s linear infinite;
+  z-index: 1;
+}
+
+.pluto {
+  transition: 1s linear;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  margin-left: -7.5px;
+  box-shadow: 5px 0px 10px rgb(255, 255, 255);
+  background: radial-gradient(circle at 100% 50%, rgb(255, 255, 255) 0%, black 80%);
+}
+
+.pluto:hover {
+  box-shadow: 5px 0px 10px rgb(0, 255, 85);
+  background: radial-gradient(circle at 100% 50%, rgb(0, 255, 85) 0%, black 80%);
+}
+
+.infor {
+  display: none;
+  position: fixed;
+  margin-top: -310px;
+  margin-left: -150px;
+  width: 300px;
+  height: 300px;
+  background-color: rgb(37, 37, 37);
+  z-index: 12;
+  border-radius: 10px;
+  border: 2px dashed rgb(255, 255, 255);
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.surface {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;
+}
+
+.atmosphere {
+  width: 190px;
+  height: 190px;
+  margin-top: 30px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  background: radial-gradient(circle at 30% 50%, #ffffff4d 0%, #ffffff00 65%);
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color);
+}
+
+.planet::before {
+  content: "";
+  position: absolute;
+  height: 190px;
+  z-index: -2;
+  left: 50%;
+  top: 10%;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: lighter;
+}
+
+@keyframes planetRotate {
+  0% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
+:root {
+  --Sun-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Map_of_the_full_sun.jpg/1200px-Map_of_the_full_sun.jpg");
+  --Sun-tilt: rotate(6.26deg);
+  --Sun-day: 200;
+  --Sun-color: #fcf5e1;
+
+  --Mercury-image: url("https://science.nasa.gov/wp-content/uploads/2023/09/PIA17386.jpg?w=2048&format=webp");
+  --Mercury-tilt: rotate(0.034deg);
+  --Mercury-day: 100;
+  --Mercury-color: #fcf5e1;
+
+  --Venus-image: url("https://upload.wikimedia.org/wikipedia/commons/1/19/Cylindrical_Map_of_Venus.jpg");
+  --Venus-tilt: rotate(177.36deg);
+  --Venus-day: 100;
+  --Venus-color: #fcf5e1;
+
+  --Earth-image: url("https://codetheworld.io/wp-content/uploads/2023/12/earth.jpg");
+  --Earth-tilt: rotate(23.26deg);
+  --Earth-day: 100;
+  --Earth-color: #fcf5e1;
+
+  --Moon-image: url("https://1721181113.rsc.cdn77.org/data/images/full/40533/china-released-a-detailed-map-of-the-moon-using-data-collected-over-the-past-15-years.jpg");
+  --Moon-tilt: rotate(6.68deg);
+  --Moon-day: 100;
+  --Moon-color: #fcf5e1;
+
+  --Mars-image: url("https://cdn.pixabay.com/photo/2020/02/04/17/02/map-4818850_1280.jpg");
+  --Mars-tilt: rotate(25.2deg);
+  --Mars-day: 50;
+  --Mars-color: #fcf5e1;
+
+  --Jupiter-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRt1zmvrhhqO__wDzueHckWvKV_eOpjMeoyH_tXDRneJg&s");
+  --Jupiter-tilt: rotate(3.1deg);
+  --Jupiter-day: 100;
+  --Jupiter-color: #fcf5e1;
+
+  --Saturn-image: url("https://www.solarsystemscope.com/textures/download/8k_saturn.jpg");
+  --Saturn-tilt: rotate(26.6deg);
+  --Saturn-day: 100;
+  --Saturn-color: #fcf5e1;
+
+  --Uranus-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEQZvBKgKJpIud10mAu9XBbs6RIKMRM1TfB7p6Mm_qgw&s");
+  --Uranus-tilt: rotate(97.77deg);
+  --Uranus-day: 100;
+  --Uranus-color: #fcf5e1;
+
+
+  --Neptune-image: url("https://supernova.eso.org/static/archives/exhibitionimages/screen/NEP0VTT1-CC-10x5k.jpg");
+  --Neptune-tilt: rotate(28.32deg);
+  --Neptune-day: 100;
+  --Neptune-color: #fcf5e1;
+
+
+  --Pluto-image: url("https://m.media-amazon.com/images/I/615ViC-EDCL.jpg");
+  --Pluto-tilt: rotate(122.53deg);
+  --Pluto-day: 100;
+  --Pluto-color: #fcf5e1;
+}
+
+.cardSun {
+  --image-Sun: var(--Sun-image);
+  --color-Sun: var(--Sun-color);
+  --tilt-Sun: var(--Sun-tilt);
+  --day-Sun: var(--Sun-day);
+}
+
+.surSun {
+  animation: planetRotate calc(var(--day-Sun) * 0.1s) linear infinite;
+  background-image: var(--image-Sun);
+  transform: var(--tilt-Sun) scale(1.2);
+}
+
+.atmSun {
+  background: radial-gradient(circle at 50% 50%, #f5272715 0%, #000000 99%);
+  box-shadow: 0 0 100px rgb(236, 217, 181);
+}
+
+.planetSun::before {
+  border-left: 1px dashed var(--color-Sun);
+  transform: var(--tilt-Sun) scale(1.2);
+}
+
+
+.cardMercury {
+  --image-Mercury: var(--Mercury-image);
+  --color-Mercury: var(--Mercury-color);
+  --tilt-Mercury: var(--Mercury-tilt);
+  --day-Mercury: var(--Mercury-day);
+}
+
+.surMercury {
+  animation: planetRotate calc(var(--day-Mercury) * 0.1s) linear infinite;
+  background-image: var(--image-Mercury);
+  transform: var(--tilt-Mercury) scale(1.2);
+}
+
+.atmMercury {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Mercury);
+}
+
+.planetMercury::before {
+  border-left: 1px dashed var(--color-Mercury);
+  transform: var(--tilt-Mercury) scale(1.2);
+}
+
+.cardVenus {
+  --image-Venus: var(--Venus-image);
+  --color-Venus: var(--Venus-color);
+  --tilt-Venus: var(--Venus-tilt);
+  --day-Venus: var(--Venus-day);
+}
+
+.surVenus {
+  animation: planetRotate calc(var(--day-Venus) * 0.1s) linear infinite;
+  background-image: var(--image-Venus);
+  transform: var(--tilt-Venus) scale(1.2);
+}
+
+.atmVenus {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Venus);
+}
+
+.planetVenus::before {
+  border-left: 1px dashed var(--color-Venus);
+  transform: var(--tilt-Venus) scale(1.2);
+}
+
+.cardEarth {
+  --image-Earth: var(--Earth-image);
+  --color-Earth: var(--Earth-color);
+  --tilt-Earth: var(--Earth-tilt);
+  --day-Earth: var(--Earth-day);
+}
+
+.surEarth {
+  animation: planetRotate calc(var(--day-Earth) * 0.1s) linear infinite;
+  background-image: var(--image-Earth);
+  transform: var(--tilt-Earth) scale(1.2);
+}
+
+.atmEarth {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Earth);
+}
+
+.planetEarth::before {
+  border-left: 1px dashed var(--color-Earth);
+  transform: var(--tilt-Earth) scale(1.2);
+}
+
+.cardMoon {
+  --image-Moon: var(--Moon-image);
+  --color-Moon: var(--Moon-color);
+  --tilt-Moon: var(--Moon-tilt);
+  --day-Moon: var(--Moon-day);
+}
+
+.surMoon {
+  animation: planetRotate calc(var(--day-Moon) * 0.1s) linear infinite;
+  background-image: var(--image-Moon);
+  transform: var(--tilt-Moon) scale(1.2);
+}
+
+.atmMoon {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Moon);
+}
+
+.planetMoon::before {
+  border-left: 1px dashed var(--color-Moon);
+  transform: var(--tilt-Moon) scale(1.2);
+}
+
+.cardMars {
+  --image-Mars: var(--Mars-image);
+  --color-Mars: var(--Mars-color);
+  --tilt-Mars: var(--Mars-tilt);
+  --day-Mars: var(--Mars-day);
+}
+
+.surMars {
+  animation: planetRotate calc(var(--day-Mars) * 0.1s) linear infinite;
+  background-image: var(--image-Mars);
+  transform: var(--tilt-Mars) scale(1.2);
+}
+
+.atmMars {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Mars);
+}
+
+.planetMars::before {
+  border-left: 1px dashed var(--color-Mars);
+  transform: var(--tilt-Mars) scale(1.2);
+}
+
+.cardJupiter {
+  --image-Jupiter: var(--Jupiter-image);
+  --color-Jupiter: var(--Jupiter-color);
+  --tilt-Jupiter: var(--Jupiter-tilt);
+  --day-Jupiter: var(--Jupiter-day);
+}
+
+.surJupiter {
+  animation: planetRotate calc(var(--day-Jupiter) * 0.1s) linear infinite;
+  background-image: var(--image-Jupiter);
+  transform: var(--tilt-Jupiter) scale(1.2);
+}
+
+.atmJupiter {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Jupiter);
+}
+
+.planetJupiter::before {
+  border-left: 1px dashed var(--color-Jupiter);
+  transform: var(--tilt-Jupiter) scale(1.2);
+}
+
+.cardSaturn {
+  --image-Saturn: var(--Saturn-image);
+  --color-Saturn: var(--Saturn-color);
+  --tilt-Saturn: var(--Saturn-tilt);
+  --day-Saturn: var(--Saturn-day);
+}
+
+.surSaturn {
+  animation: planetRotate calc(var(--day-Saturn) * 0.1s) linear infinite;
+  background-image: var(--image-Saturn);
+  transform: var(--tilt-Saturn) scale(1.2);
+}
+
+.atmSaturn {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Saturn);
+}
+
+.planetSaturn::before {
+  border-left: 1px dashed var(--color-Saturn);
+  transform: var(--tilt-Saturn) scale(1.2);
+}
+
+.cardUranus {
+  --image-Uranus: var(--Uranus-image);
+  --color-Uranus: var(--Uranus-color);
+  --tilt-Uranus: var(--Uranus-tilt);
+  --day-Uranus: var(--Uranus-day);
+}
+
+.surUranus {
+  animation: planetRotate calc(var(--day-Uranus) * 0.1s) linear infinite;
+  background-image: var(--image-Uranus);
+  transform: var(--tilt-Uranus) scale(1.2);
+}
+
+.atmUranus {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Uranus);
+}
+
+.planetUranus::before {
+  border-left: 1px dashed var(--color-Uranus);
+  transform: var(--tilt-Uranus) scale(1.2);
+}
+
+.cardNeptune {
+  --image-Neptune: var(--Neptune-image);
+  --color-Neptune: var(--Neptune-color);
+  --tilt-Neptune: var(--Neptune-tilt);
+  --day-Neptune: var(--Neptune-day);
+}
+
+.surNeptune {
+  animation: planetRotate calc(var(--day-Neptune) * 0.1s) linear infinite;
+  background-image: var(--image-Neptune);
+  transform: var(--tilt-Neptune) scale(1.2);
+}
+
+.atmNeptune {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Neptune);
+}
+
+.planetNeptune::before {
+  border-left: 1px dashed var(--color-Neptune);
+  transform: var(--tilt-Neptune) scale(1.2);
+}
+
+.cardPluto {
+  --image-Pluto: var(--Pluto-image);
+  --color-Pluto: var(--Pluto-color);
+  --tilt-Pluto: var(--Pluto-tilt);
+  --day-Pluto: var(--Pluto-day);
+}
+
+.surPluto {
+  animation: planetRotate calc(var(--day-Pluto) * 0.1s) linear infinite;
+  background-image: var(--image-Pluto);
+  transform: var(--tilt-Pluto) scale(1.2);
+}
+
+.atmPluto {
+  box-shadow: inset 10px 0px 12px -2px #cccccc85, inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--color-Pluto);
+}
+
+.planetPluto::before {
+  border-left: 1px dashed var(--color-Pluto);
+  transform: var(--tilt-Pluto) scale(1.2);
+}
+
+@media screen and (max-width: 667px) {
+  body {
+    background-color: rgb(75, 75, 75);
+  }
+  .menu nav a{
+    font-size: 20px;
+  }
+
+  .container {
+    height: 450px;
+  }
+
+  .sun {
+    width: 25px;
+    height: 25px;
+  }
+
+  .cmercury {
+    width: 37.5px;
+    height: 37.5px;
+  }
+
+  .mercury {
+    width: 8px;
+    height: 8px;
+    box-shadow: 5px 0px 10px rgb(255, 100, 100);
+  }
+
+  .cvenus {
+    width: 70px;
+    height: 70px;
+  }
+
+  .venus {
+    width: 12px;
+    height: 12px;
+    margin-left: -6px;
+  }
+
+  .cearth {
+    width: 110px;
+    height: 110px;
+  }
+
+  .earth {
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+  }
+
+  .cmoon {
+    width: 20px;
+    height: 20px;
+    margin-left: -11px;
+  }
+
+  .moon {
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+  }
+
+  .cmars {
+    width: 150px;
+    height: 150px;
+  }
+
+  .mars {
+    width: 9px;
+    height: 9px;
+    margin-left: -5px;
+  }
+
+  .cjupiter {
+    width: 190px;
+    height: 190px;
+  }
+
+  .jupiter {
+    width: 22px;
+    height: 22px;
+    margin-left: -11px;
+  }
+
+  .csaturn {
+    width: 250px;
+    height: 250px;
+  }
+
+  .saturn {
+    width: 19px;
+    height: 19px;
+    margin-left: -9.5px;
+  }
+
+  .belt-saturn {
+    width: 25px;
+    height: 25px;
+    border: 5px solid rgba(170, 255, 100, 0.342);
+    margin-left: -8px;
+    margin-top: -8px;
+  }
+
+  .curanus {
+    width: 310px;
+    height: 310px;
+  }
+
+  .uranus {
+    width: 10px;
+    height: 10px;
+    margin-left: -5px;
+  }
+
+  .cneptune {
+    width: 350px;
+    height: 350px;
+  }
+
+  .neptune {
+    width: 7px;
+    height: 7px;
+    margin-left: -4px;
+  }
+
+  .cpluto {
+    width: 400px;
+    height: 400px;
+  }
+
+  .pluto {
+    width: 5px;
+    height: 5px;
+    margin-left: -3px;
+  }
+
+  .infor {
+    width: 130px;
+    height: 130px;
+    margin-top: -270px;
+    margin-left: -130px;
+  }
+
+  .atmosphere {
+    width: 50px;
+    height: 50px;
+  }
+
+  .planet::before {
+    height: 60px;
+    margin-top: 10px;
+    border: 0.1px dashed white;
+  }
+
+  .atmSun {
+    background: radial-gradient(circle at 50% 50%, #f5272715 0%, #000000 99%);
+    box-shadow: 0 0 100px rgb(236, 217, 181);
+  }
+
+  .circle {
+    border: 0.1px solid #cccccc85;
+  }
+
+  .atmMercury {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Mercury);
+  }
+
+  .atmVenus {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Venus);
+  }
+
+  .atmEarth {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Earth);
+  }
+
+  .atmMoon {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Moon);
+  }
+
+  .atmMars {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Mars);
+  }
+
+  .atmJupiter {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Jupiter);
+  }
+
+  .atmSaturn {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Saturn);
+  }
+
+  .atmUranus {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Uranus);
+  }
+
+  .atmNeptune {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Neptune);
+  }
+
+  .atmPluto {
+    box-shadow: inset 2.5px 0px 3px -1px #cccccc85, inset -25px 0px 25px 0px black, -1.5px 0px 2.5px -2px var(--color-Pluto);
+  }
+}
+
+@media screen and (min-width: 667px) and (max-width: 1220px) {
+  body {
+    background-color: rgb(29, 29, 29);
+  }
+  .menu nav a{
+    font-size: 25px;
+  }
+
+  .container {
+    height: 800px;
+  }
+
+  .sun {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cmercury {
+    width: 75px;
+    height: 75px;
+  }
+
+  .mercury {
+    width: 10px;
+    height: 10px;
+  }
+
+  .cvenus {
+    width: 125px;
+    height: 125px;
+  }
+
+  .venus {
+    width: 20.7px;
+    height: 20.7px;
+  }
+
+  .cearth {
+    width: 190px;
+    height: 190px;
+    display: flex;
+    z-index: 7;
+  }
+
+  .earth {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cmoon {
+    width: 30px;
+    height: 30px;
+    margin-left: -18px;
+  }
+
+  .moon {
+    width: 6px;
+    height: 6px;
+    margin-left: -3px;
+  }
+
+  .cmars {
+    width: 250px;
+    height: 250px;
+  }
+
+  .mars {
+    width: 15px;
+    height: 15px;
+  }
+
+  .cjupiter {
+    width: 320px;
+    height: 320px;
+  }
+
+  .jupiter {
+    width: 40px;
+    height: 40px;
+    margin-left: -20px;
+  }
+
+  .csaturn {
+    width: 430px;
+    height: 430px;
+  }
+
+  .saturn {
+    width: 38px;
+    height: 38px;
+    margin-left: -19px;
+  }
+
+  .belt-saturn {
+    width: 45px;
+    height: 45px;
+    border: 8px solid rgba(170, 255, 100, 0.342);
+    margin-left: -11px;
+    margin-top: -11px;
+  }
+
+  .curanus {
+    width: 550px;
+    height: 550px;
+  }
+
+  .uranus {
+    width: 18px;
+    height: 18px;
+    margin-left: -10px;
+  }
+
+  .cneptune {
+    width: 600px;
+    height: 600px;
+  }
+
+  .neptune {
+    width: 12px;
+    height: 12px;
+    margin-left: -8px;
+  }
+
+  .cpluto {
+    width: 650px;
+    height: 650px;
+  }
+
+  .pluto {
+    width: 8px;
+    height: 8px;
+    margin-left: -5px;
+  }
+
+
+  .infor {
+    width: 200px;
+    height: 200px;
+    margin-top: -210px;
+    margin-left: -100px;
+  }
+
+  .atmosphere {
+    width: 100px;
+    height: 100px;
+  }
+
+  .planet::before {
+    height: 115px;
+  }
+
+  .circle {
+    border: 0.1px solid #cccccc85;
+  }
+
+  .atmSun {
+    background: radial-gradient(circle at 50% 50%, #f5272715 0%, #000000 99%);
+    box-shadow: 0 0 100px rgb(236, 217, 181);
+  }
+
+  .atmMercury {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Mercury);
+  }
+
+  .atmVenus {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Venus);
+  }
+
+  .atmEarth {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Earth);
+  }
+
+  .atmMoon {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Moon);
+  }
+
+  .atmMars {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Mars);
+  }
+
+  .atmJupiter {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Jupiter);
+  }
+
+  .atmSaturn {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Saturn);
+  }
+
+  .atmUranus {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Uranus);
+  }
+
+  .atmNeptune {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Neptune);
+  }
+
+  .atmPluto {
+    box-shadow: inset 5px 0px 6px -1px #cccccc85, inset -35px 0px 25px 0px black, -2.5px 0px 5px -2px var(--color-Pluto);
+  }
+
+}
+
+footer {
+  display: grid;
+  align-items: center;
+}
+
+.text-footer {
+  display: grid;
+  border-top: 1px solid white;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

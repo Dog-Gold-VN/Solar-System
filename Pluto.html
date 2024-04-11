@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Sun</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #121212;
+            color: white;
+            display: inline;
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .name p {
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .menu nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            font-weight: bold;
+            flex-wrap: wrap;
+        }
+
+        .menu nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: 0.2s linear;
+            border: 1px solid #121212;
+            border-radius: 5px 5px 0px 0px;
+        }
+        .menu nav a:nth-child(12){
+            border-bottom: 1px solid red;
+            background-color: #3b3b3b;
+        }
+
+        .menu nav a:hover {
+            border-bottom: 1px solid rgb(0, 217, 255);
+            background-color: #3e8e41;
+            transform: translateY(-5px);
+        }
+
+
+
+        :root {
+            --Pluto-image: url("https://m.media-amazon.com/images/I/615ViC-EDCL.jpg");
+            --Pluto-tilt: rotate(122.53deg);
+            --Pluto-day: 100;
+            --Pluto-color: #fcf5e1;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: nowrap;
+            width: 80%;
+            height: auto;
+            align-items: center;
+            justify-content: center;
+            margin-left: 15%;
+            margin-right: 15%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .content {
+            width: 400px;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+
+        .card {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            --image: var(--Pluto-image);
+            --coler: var(--Pluto-color);
+            --tilt: var(--Pluto-tilt);
+            --day: var(--Pluto-day);
+        }
+
+        @keyframes planetRotate {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        .surface {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: -1;
+            background-image: var(--image);
+            background-size: cover;
+            transform: var(--tilt) scale(1.2);
+            animation: planetRotate calc(var(--day) * 0.1s) linear infinite;
+        }
+
+        .atmosphere {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            border-radius: 50%;
+            overflow: hidden;
+            background: radial-gradient(circle at 30% 50%,
+                    #ffffff4d 0%,
+                    #ffffff00 65%);
+            box-shadow: inset 10px 0px 12px -2px #cccccc85,
+                inset -70px 0px 50px 0px black, -5px 0px 10px -4px var(--coler);
+        }
+
+        .planet::before {
+            content: "";
+            position: absolute;
+            height: 290px;
+            z-index: -2;
+            left: 50%;
+            top: 0%;
+            border-left: 1px dashed var(--coler);
+            transform: var(--tilt) scale(1.2);
+        }
+
+        .icon {
+            transform: var(--tilt);
+            color: var(--color);
+        }
+
+        .info {
+            width: 100%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .item {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 5px;
+        }
+
+        .icon {
+            margin-right: 5px;
+        }
+
+        .label {
+            font-size: 20px;
+        }
+
+        .line {
+            flex: 1;
+            border-bottom: 1px dashed #ffffffc2;
+        }
+
+        .info h2 {
+            font-size: 40px;
+        }
+
+        .information {
+            background-color: #666666;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            border-radius: 20px;
+            overflow: auto;
+            margin-right: 50px;
+            margin-left: 50px;
+        }
+
+        .information ol li {
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-bottom: 1px solid white;
+            padding: 15px;
+        }
+
+        .information ol li:last-child {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        button {
+            background-color: #28cc4e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.7s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        button:hover {
+            transform: scale(1.15);
+            background-color: #1be2c8;
+        }
+
+        @media screen and (max-width: 1024px) {
+            .container {
+                flex-wrap: wrap;
+            }
+
+            .information {
+                margin: 0;
+            }
+        }
+
+        footer {
+            display: grid;
+            align-items: center;
+        }
+
+        .text-footer {
+            display: flex;
+            border-top: 1px solid white;
+            padding: 10px;
+            margin: 10px;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="name">
+            <a href="index.html">
+                <p>Solar system</p>
+            </a>
+        </div>
+        <div class="menu">
+            <nav>
+                <a href="index.html">Home</a>
+                <a class="a-Sun" href="Sun.html">Sun</a>
+                <a class="a-Mercury" href="Mercury.html">Mercury</a>
+                <a class="a-Venus" href="Venus.html">Venus</a>
+                <a class="a-Earth" href="Earth.html">Earth</a>
+                <a class="a-Moon" href="Moon.html">Moon</a>
+                <a class="a-Mars" href="Mars.html">Mars</a>
+                <a class="a-Jupiter" href="Jupiter.html">Jupiter</a>
+                <a class="a-Saturn" href="Saturn.html">Saturn</a>
+                <a class="a-Uranus" href="Uranus.html">Uranus</a>
+                <a class="a-Neptune" href="Neptune.html">Neptune</a>
+                <a class="a-Pluto" href="Pluto.html">Pluto</a>
+            </nav>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <article class="card">
+                    <div class="planet">
+                        <div class="atmosphere">
+                            <div class="surface"></div>
+                        </div>
+                    </div>
+                    <div class="info">
+                        <h2 class="title">Pluto</h2>
+                        <div class="form">
+                            <div class="item">
+                                <label class="label">Góc nghiêng </label>
+                                <span class="line"></span>
+                                <i class="icon fa-solid fa-right-long"></i>
+                                <span class="detail">122.53°</span>
+                            </div>
+                            <div class="item">
+                                <label class="label">Ngày</label>
+                                <span class="line"></span>
+                                <span class="detail">153.3 giờ Trái Đất</span>
+                            </div>
+                            <div class="item">
+                                <label class="label">Năm</label>
+                                <span class="line"></span>
+                                <span class="detail"> 248 năm Trái Đất</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <div class="information">
+            <ol>
+                <li>
+                    Tái Phân Loại: Sao Diêm Vương đã bị loại khỏi danh sách các hành tinh của hệ Mặt Trời khi IAU định
+                    nghĩa lại thuật ngữ "hành tinh". Để được gọi là hành tinh, một thiên thể cần phải đáp ứng ba tiêu
+                    chí: phải quay quanh Mặt Trời, có hình dạng cân đối do lực hấp dẫn (trạng thái cân bằng thủy tĩnh),
+                    và đã "dọn sạch" vùng lân cận quỹ đạo của mình. Sao Diêm Vương không đáp ứng tiêu chí thứ ba do kích
+                    thước nhỏ và vùng quỹ đạo chứa nhiều thiên thể khác.
+                </li>
+                <li>
+                    Vành Đai Kuiper: Sao Diêm Vương là một phần của Vành đai Kuiper, một khu vực chứa đầy các thiên thể
+                    băng giá và hành tinh lùn khác nằm xa sau quỹ đạo của Sao Hải Vương.
+                </li>
+                <li>
+                    Quỹ Đạo Đặc Biệt: Quỹ đạo của Sao Diêm Vương rất lạ và nghiêng so với mặt phẳng quỹ đạo của các hành
+                    tinh khác trong hệ Mặt Trời. Nó cũng có tính chất hình elip đến mức có lúc nó lại gần Mặt Trời hơn
+                    Sao Hải Vương.
+                </li>
+                <li>
+                    Cấu Trúc Phức Tạp: Sao Diêm Vương có một cấu trúc địa chất phức tạp với băng, núi, thung lũng và
+                    thậm chí là dấu hiệu của hoạt động địa chất. Bề mặt của nó cũng có các khu vực với màu sắc khác
+                    nhau, cho thấy sự phong phú về khoáng chất.
+                </li>
+                <li>
+                    Trăng Charon: Sao Diêm Vương có năm mặt trăng đã biết, trong đó lớn nhất là Charon. Charon lớn đến
+                    mức nó tạo thành một hệ thống hành tinh lùn kép với Sao Diêm Vương, cả hai quay quanh một điểm trong
+                    không gian nằm giữa chúng thay vì một điểm trong Sao Diêm Vương.
+                </li>
+                <li> <a href="informationPluto.html"> <button> Read More </button></a></li>
+            </ol>
+        </div>
+    </div>
+    <footer>
+        <div class="text-footer">
+            <ul>
+                <p>Địa chỉ: Số 1 Phố Xốm - Phú Lãm - Hà Đông - Hà Nội</p>
+                <p> SĐT: 039.444.0833 </p>
+                <p> Email: Quanghaia2005@gmail.com</p>
+            </ul>
+            <ul>
+                <p>Liên hệ với chúng tôi: </p>
+                <p><i class="fa-solid fa-phone"></i></p>
+                <p><i class="fa-solid fa-envelope"></i></p>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

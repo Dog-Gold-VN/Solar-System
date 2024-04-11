@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(182, 166, 144);
+            width: 100%;
+            height: 500px;
+        }
+
+        .redbox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            /* display: flex; */
+            /* justify-content: center; */
+            position: relative;
+
+        }
+
+        .bluebox {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            display: none;
+            position: fixed;
+            /* top: 150px; */
+            pointer-events: none;
+
+        }
+
+        .X-Y {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            gap: 20%;
+            width: 100%;
+            background-color: tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="redbox">
+
+        </div>
+        <div class="bluebox"></div>
+    </div>
+    <div class="X-Y">
+        <span class="X">X: </span>
+        <span class="Y">Y: </span>
+    </div>
+    <script>
+
+        var redbox = document.querySelector(".redbox");
+        var bluebox = document.querySelector(".bluebox");
+
+        redbox.addEventListener("mousemove", function () {
+            // const vitrix = event.clientX;
+            // const vitriy = event.clientY;
+            bluebox.style.top = vitriy + (-50) + 'px';
+            bluebox.style.left = vitrix + (-50) + 'px';
+            bluebox.style.display = 'block';
+
+            // const X = document.querySelector('.X');
+            // const y = document.querySelector('.Y');
+
+            // X.innerHTML = 'X: ' + '' + vitrix;
+            // y.innerHTML = 'Y: ' + '' + vitriy;
+        });
+
+        redbox.addEventListener("mouseout", function () {
+            bluebox.style.display = 'none';
+        });
+
+
+        // function showBlueBox() {
+        //     const mouseX = event.clientX;
+        //     const mouseY = event.clientY;
+
+        //     bluebox.style.left = mouseX + 'px';
+        //     bluebox.style.top = mouseY + 'px';
+        //     bluebox.style.display = 'block';
+
+        //     var X = document.querySelector(".X");
+        //     var Y = document.querySelector(".Y");
+
+        //     X.innerHTML = 'X: ' + mouseX;
+        //     Y.innerHTML = 'Y: ' + mouseY;
+        // }
+
+        // function hidebluebox() {
+        //     bluebox.style.display = 'none';
+        // }
+
+        // redbox.addEventListener('mousemove', showBlueBox);
+        // redbox.addEventListener('mouseleave', hidebluebox);
+
+
+    </script>
+</body>
+
+</html>

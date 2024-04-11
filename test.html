@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            display: grid;
+            place-items: center;
+            height: 800px;
+        }
+        .container {
+            background-color: rgb(75, 74, 74);
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .red{
+            background-color: red;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            top: auto;
+            left: auto;
+            border-radius: 50%;
+        }
+        .green{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+        .blue{
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+            display: none;
+            position: fixed;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="red" id="red"></div>
+        <div class="green" id="green"></div>
+        <div class="blue" id="blue"></div>
+    </div>
+    <script>
+
+        const red = document.getElementById('red');
+        const blue = document.getElementById('blue');
+        function showblue(e){
+            const X = e.clientX;
+            const Y = e.clientY;
+            blue.style.left = X + 'px';
+            blue.style.top = Y + 'px';
+            blue.style.display = 'block';
+        }   
+        function hideblue(e){
+            blue.style.display = 'none';
+        }
+        red.addEventListener('mouseover',showblue);
+        red.addEventListener('mouseout',hideblue);
+    </script>
+</body>
+</html>
